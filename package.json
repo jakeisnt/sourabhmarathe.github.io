@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "first blog with javascript",
   "dependencies": {
+    "dexie": "^2.0.4",
     "express": "^4.16.4",
     "socket.io": "^2.1.1"
   }
