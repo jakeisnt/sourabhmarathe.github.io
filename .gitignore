@@ -1,3 +1,9 @@
 node_modules/*
 package-lock.json
 TODO
+chats/*
+config.json
+log.txt
+pouch__all_dbs__/*
+_replicator/*
+*.swp
