@@ -2,6 +2,7 @@ node_modules/*
 package-lock.json
 TODO
 chats/*
+_users/*
 config.json
 log.txt
 pouch__all_dbs__/*
