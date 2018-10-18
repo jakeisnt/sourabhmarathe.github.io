@@ -8,3 +8,4 @@ log.txt
 pouch__all_dbs__/*
 _replicator/*
 *.swp
+.jshintrc
