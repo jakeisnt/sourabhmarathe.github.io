@@ -21,13 +21,13 @@
     </form>
     <script src="/socket.io/socket.io.js"></script>
     <script type="application/javascript" src="scripts/pouchdb.min.js"></script>
+    <script src="scripts/js.cookie.js"></script>
     <script type="application/javascript" src="scripts/pouchdb.find.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="scripts/js.cookie.js"></script>
-    <script>
+    <script defer>
     $(function() {
       var socket = io();
-      $('form').submit(function(){
+      $('form').submit(function() {
         socket.emit('chat', $('#m').val());
       $('#m').val('');
       return false;

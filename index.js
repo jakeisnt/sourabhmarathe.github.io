@@ -22,7 +22,7 @@ io.on('connection', function (socket) {
 		cookie_id = uuidv4();
 		chats_db.post({'user_id': cookie_id}).then(function (response) {
 			set_cookie = Cookies.set('user_id', cookie_id, { expires: 7 });
-			console.log(Cookies.get('user_id'));
+			console.log(Cookies.get() + ' ==== ' + cookie_id);
 		}).catch(function(err) {
 			console.log('could not post: ' + err);
 		});
