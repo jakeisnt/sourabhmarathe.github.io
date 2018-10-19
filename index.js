@@ -1,11 +1,15 @@
+var express = require('express');
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var PouchDB = require('pouchdb');
 PouchDB.plugin(require('pouchdb-find'));
 var Cookies = require('js-cookie');
-var remote_db = 'http://127.0.0.1:5984/chats';
+var remote_db = 'http://127.0.0.1:5984/friend';
 const uuidv4 = require('uuid/v4');
+
+app.use('/scripts', express.static(__dirname + '/node_modules/js-cookie/src/'));
+app.use('/scripts', express.static(__dirname + '/node_modules/pouchdb/dist/'));
 
 app.get('/', function (req, res) {
 	res.sendFile(__dirname + '/index.html');
@@ -13,8 +17,8 @@ app.get('/', function (req, res) {
 
 io.on('connection', function (socket) {
 	console.log('a user is trying to connect');
-	var cookie_id, chats_db = new PouchDB('chats');
-	if (!Cookies.get('user_id')) {
+	var cookie_id, chats_db = new PouchDB('friend');
+	if (!Cookies.get('io')) {
 		cookie_id = uuidv4();
 		chats_db.post({'user_id': cookie_id}).then(function (response) {
 			set_cookie = Cookies.set('user_id', cookie_id, { expires: 7 });

@@ -9,3 +9,6 @@ pouch__all_dbs__/*
 _replicator/*
 *.swp
 .jshintrc
+.config.json
+friend/*
+
