@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang='en'>
   <head>
-    <title>Sourabh's blog</title>
+    <title>My blog</title>
     <style>
       * {margin: 0; padding: 0; box-sizing: border-box;}
       body {font: 13px Helvetica, Arial}
@@ -15,20 +15,16 @@
   </head>
   <body>
     <h1>Hello</h1>
-    <p> Welcome to my blog. I will try to post some stuff here, like books, articles, podcasts and videos/TV shows that I like. </p>
-    <p> Some facts about me:</p>
-    <p> 1. I live in the United States. </p>
-    <p> 2. I enjoy weightlifting and playing basketball with my friends.</p>
-    <p> 3. I am learning about bitcoin and the history of money right now. </p>
-    <p> 4. I like Boston sports. </p>
-    <p> 5. My email is surja795@gmail.com or you can send me a message below. </p>
     <ul id="messages"></ul>
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/node_modules/pouchdb/dist/pouchdb.min.js"></script>
+    <script src="/node_modules/pouchdb/dist/pouchdb.find.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-  <script>
+    <script src="/node_modules/js-cookie/src/js.cookie.js"></script>
+    <script>
     $(function() {
       var socket = io();
       $('form').submit(function(){
